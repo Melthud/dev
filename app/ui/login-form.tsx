@@ -1,4 +1,4 @@
-import { lusitana } from '@/app/ui/fonts';
+
 import {
   AtSymbolIcon,
   KeyIcon,
@@ -6,13 +6,14 @@ import {
 } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
+import Link from 'next/link';
 
 export default function LoginForm() {
   return (
     <form className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-        <h1 className={`${lusitana.className} mb-3 text-2xl`}>
-          Please log in to continue.
+        <h1 className={`mb-3 text-2xl`}>
+          Ingresa tus credenciales para poder ingresar .
         </h1>
         <div className="w-full">
           <div>
@@ -39,7 +40,7 @@ export default function LoginForm() {
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
               htmlFor="password"
             >
-              Password
+              Contraseña
             </label>
             <div className="relative">
               <input
@@ -67,7 +68,8 @@ export default function LoginForm() {
 function LoginButton() {
   return (
     <Button className="mt-4 w-full">
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      Ingresar <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      
     </Button>
   );
 }
