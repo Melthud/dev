@@ -7,6 +7,8 @@ import {
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
+  BookOpenIcon,
+  CodeBracketIcon
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
 import { createInvoice } from '@/app/lib/actions';
@@ -29,7 +31,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               defaultValue=""
             >
               <option value="" disabled>
-                Seleciona cliente
+                Cliente
               </option>
               {customers.map((customer) => (
                 <option key={customer.id} value={customer.id}>
@@ -60,6 +62,57 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             </div>
           </div>
         </div>
+
+        <div className="mb-4">
+          <label htmlFor="amount" className="mb-2 block text-sm font-medium">
+            Escoja el curso
+          </label>
+          <div className="relative mt-2 rounded-md">
+            <div className="relative">
+                  <select
+                    id="course"
+                    name="courseId"
+                    className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Curso
+                    </option>
+                    <option value="">Curso General Critico | $ 320.00 USD</option>
+                    <option value="">Curso Ecografia Doopler y Gineco Obstetrico | $ 200.00 USD</option>
+                    <option value="" selected>Curso Primeros Auxilios Paciente General Critico | $ 150.00 USD</option>
+                    <option value="">Curso Seguridad Ciudadana | $ 50.00 USD</option>
+                  </select>
+              <BookOpenIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+            </div>
+          </div>
+        </div>
+
+            {/* Invoice Amount */}
+            <div className="mb-4">
+                      <label htmlFor="amount" className="mb-2 block text-sm font-medium">
+                        Digite el codigo de vaucher
+                      </label>
+                      <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <input
+                            id="code"
+                            name="codeId"
+                            type="string"
+                           
+                            placeholder="Codigo unico"
+                            className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                          />
+                          <CodeBracketIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                        </div>
+                        
+                        
+                
+                      </div>
+                    </div>
+
+
+
 
         {/* Invoice Status */}
         <fieldset>
@@ -104,7 +157,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
       </div>
       <div className="mt-6 flex justify-end gap-4">
         <Link
-          href="/dashboard/invoices"
+          href="/dashboard/ventas"
           className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
         >
           Cancelar
