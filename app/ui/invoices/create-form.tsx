@@ -12,8 +12,26 @@ import {
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
 import { createInvoice } from '@/app/lib/actions';
+import { useState } from 'react';
+
+
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
+  const [botonactivo, setbotonactivo] = useState(false);
+  const [botonlleno, setbotonlleno] = useState([]);
+
+  const toma=(e: { target: { value: any; }; })=>{
+    console.log(e.target.value)
+    
+    if(e.target.value == 'A1B2C3' || e.target.value == 'A2B2C3' || e.target.value == 'A3B2C3'){
+        setbotonactivo(false);
+        
+         alert('VAUCHER YA REGISTRADO');
+    }else{
+      setbotonactivo(true);
+    }
+  }
+
   return (
     
     <form action={createInvoice}>
@@ -80,7 +98,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                     </option>
                     <option value="">Curso General Critico | $ 320.00 USD</option>
                     <option value="">Curso Ecografia Doopler y Gineco Obstetrico | $ 200.00 USD</option>
-                    <option value="" selected>Curso Primeros Auxilios Paciente General Critico | $ 150.00 USD</option>
+                    <option value="">Curso Primeros Auxilios Paciente General Critico | $ 150.00 USD</option>
                     <option value="">Curso Seguridad Ciudadana | $ 50.00 USD</option>
                   </select>
               <BookOpenIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -99,21 +117,16 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                             id="code"
                             name="codeId"
                             type="string"
-                           
                             placeholder="Codigo unico"
                             className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                            onChange={toma}
                           />
+                          
                           <CodeBracketIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
                         </div>
-                        
-                        
-                
+                       
                       </div>
                     </div>
-
-
-
-
         {/* Invoice Status */}
         <fieldset>
           <legend className="mb-2 block text-sm font-medium">
@@ -162,7 +175,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         >
           Cancelar
         </Link>
-        <Button type="submit">Crear</Button>
+        <Button disabled={!botonactivo} type="submit" >Crear</Button>
       </div>
     </form>
   );

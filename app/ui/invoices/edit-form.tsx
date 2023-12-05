@@ -6,7 +6,8 @@ import {
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-  BookOpenIcon
+  BookOpenIcon,
+  CodeBracketIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
@@ -53,7 +54,7 @@ export default function EditInvoiceForm({
         {/* Invoice Amount */}
         <div className="mb-4">
           <label htmlFor="amount" className="mb-2 block text-sm font-medium">
-            Costo
+            Digite la cantidad
           </label>
           <div className="relative mt-2 rounded-md">
             <div className="relative">
@@ -96,6 +97,28 @@ export default function EditInvoiceForm({
             </div>
           </div>
         </div>
+
+
+        <div className="mb-4">
+                      <label htmlFor="amount" className="mb-2 block text-sm font-medium">
+                        Digite el codigo de vaucher
+                      </label>
+                      <div className="relative mt-2 rounded-md">
+                        <div className="relative">
+                          <input
+                            id="code"
+                            name="codeId"
+                            type="string"
+                            placeholder="A1B2C4"
+                            className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                            
+                          />
+                          
+                          <CodeBracketIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                        </div>
+                       
+                      </div>
+                    </div>
 
 
         {/* Invoice Status */}
