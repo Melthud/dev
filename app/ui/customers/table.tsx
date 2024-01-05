@@ -19,7 +19,7 @@ export default async function CustomersTable({
           <div className="inline-block min-w-full align-middle">
             <div className="overflow-hidden rounded-md bg-gray-50 p-2 md:pt-0">
               <div className="md:hidden">
-                {customers?.map((customer) => (
+                {customers.map((customer) => (
                   <div
                     key={customer.id}
                     className="mb-2 w-full rounded-md bg-white p-4"
@@ -45,7 +45,7 @@ export default async function CustomersTable({
                     </div>
                     <div className="flex w-full items-center justify-between border-b py-5">
                       <div className="flex w-1/2 flex-col">
-                        <p className="text-xs">Pending</p>
+                        <p className="text-xs">Adeuda</p>
                         <p className="font-medium">{customer.total_pending}</p>
                       </div>
                       <div className="flex w-1/2 flex-col">
@@ -54,7 +54,7 @@ export default async function CustomersTable({
                       </div>
                     </div>
                     <div className="pt-4 text-sm">
-                      <p>{customer.total_invoices} invoices</p>
+                      <p>{customer.total_invoices} Compras</p>
                     </div>
                   </div>
                 ))}
@@ -63,19 +63,19 @@ export default async function CustomersTable({
                 <thead className="rounded-md bg-gray-50 text-left text-sm font-normal">
                   <tr>
                     <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                      Name
+                      Nombre
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
                       Email
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
-                      Total Invoices
+                      Total de Compras
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
-                      Total Pending
+                      Total Adeudado
                     </th>
                     <th scope="col" className="px-4 py-5 font-medium">
-                      Total Paid
+                      Total Adquirido
                     </th>
                   </tr>
                 </thead>

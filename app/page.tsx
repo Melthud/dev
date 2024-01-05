@@ -8,7 +8,7 @@ import { GlobeAltIcon } from '@heroicons/react/24/outline';
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-red-700 p-4 md:h-52">
        
      <AcmeLogo/>
       
@@ -20,14 +20,14 @@ export default function Page() {
           
           <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <strong>Hola Bienvenido a JYS DEV.</strong> Una plataforma de {' '}
-            <a href="https://capacitacion.bqc.com.ec/" className="text-blue-500">
+            <a href="https://capacitacion.bqc.com.ec/" className="text-blue-800">
               BQC Corporation
             </a>
             , para control de ventas de certificaciones.
           </p>
           <Link
             href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg bg-red-700 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-600 md:text-base"
           >
             <span>Ingresar</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
@@ -35,7 +35,7 @@ export default function Page() {
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
           <Image 
-              src='/hero-desktop.png'
+              src='/iniciobg.png'
               alt='Panel de control la imagen'
               width={1000}
               height={760}
